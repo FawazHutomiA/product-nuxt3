@@ -15,6 +15,7 @@ export default defineNuxtConfig({
   modules: [
     // ...
     "@pinia/nuxt",
+    "nuxt-swiper",
   ],
   app: {
     head: {

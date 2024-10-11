@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div v-if="isLoading">
+    <div v-if="isLoading" class="loader">
       <LoadingSpinner />
-      <h3>Wait for the product</h3>
+      <h3>Loading...</h3>
     </div>
 
     <div v-if="product && !isLoading" class="container">
@@ -14,7 +14,6 @@
       <div class="product-details">
         <h1>{{ product.name }}</h1>
         <p class="product-price">Rp. {{ formatPrice(product.price) }}</p>
-        <p class="product-description">{{ product.description }}</p>
         <h2>Variant: Color - Please select color you want</h2>
         <div class="product-variant">
           <div
@@ -25,6 +24,7 @@
             @click="selectImage(item.id)"
           ></div>
         </div>
+        <p class="product-description">{{ product.description }}</p>
       </div>
     </div>
   </div>
@@ -70,6 +70,10 @@ h3 {
   text-align: center;
 }
 
+.loader {
+  margin-top: 100px;
+}
+
 .container {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -90,8 +94,8 @@ h3 {
     box-shadow: 0 12px 15px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease;
     overflow: hidden;
-    width: 40rem;
-    height: 40rem;
+    width: 26rem;
+    height: 30rem;
 
     img {
       width: 100%;
@@ -104,24 +108,25 @@ h3 {
     flex: 1;
 
     h1 {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
 
     .product-description {
-      font-size: 1.2rem;
+      font-size: 1rem;
+      margin-top: 40px;
     }
 
     .product-price {
       color: #3498db;
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
 
     .product-variant {
@@ -136,8 +141,8 @@ h3 {
         transition: box-shadow 0.3s ease;
         overflow: hidden;
         cursor: pointer;
-        width: 3rem;
-        height: 3rem;
+        width: 2rem;
+        height: 2rem;
       }
     }
   }

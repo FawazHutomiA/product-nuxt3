@@ -1,9 +1,9 @@
 <template>
   <div>
     <!-- Loading Spinner -->
-    <div v-if="isLoading">
+    <div v-if="isLoading" class="loader">
       <LoadingSpinner />
-      <h3>Wait for product list</h3>
+      <h3>Loading...</h3>
     </div>
 
     <!-- Product List -->
@@ -37,6 +37,10 @@ const products = computed(() => store.allProducts);
 </script>
 
 <style scoped lang="scss">
+.loader {
+  margin-top: 100px;
+}
+
 .product-list {
   display: flex;
   flex-wrap: wrap;

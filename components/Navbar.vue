@@ -13,7 +13,9 @@
 .navbar {
   background-color: #3498db;
   padding: 1rem 2rem;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 
   .navbar-container {
     display: flex;
